@@ -348,6 +348,7 @@
       const cardTitle = document.createElement('h2');
       cardTitle.className = 'text-sm font-medium mb-1 truncate dark:text-gray-400';
       cardTitle.innerText = title;
+      cardTitle.title = title;
 
       // Clean URL by removing http(s) and trailing slash
       const cleanUrl = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
