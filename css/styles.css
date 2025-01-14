@@ -4,7 +4,7 @@
 
 .text-main-500{
   --tw-text-opacity: 1;
-  color: rgba(11, 166, 101, var(--tw-text-opacity)) 
+  color: rgba(11, 166, 101, var(--tw-text-opacity))
 }
 .dark{
   --tw-bg-opacity: 1;
@@ -38,27 +38,27 @@
 
 
 
-  
+
   :root {
     --folderColor: #3CB884;
     --paperColor: #ffffff;
   }
-  
+
   .folder-card {
     transition: all 0.2s ease-in;
   }
-  
+
   .folder__svg {
     width: 100px;
     height: 80px;
   }
-  
+
   .folder__back {
     fill: #0BA665;
     rx: 10;
     ry: 10;
   }
-  
+
   .paper-1 {
     fill: #e6e6e6;
     transition: all 0.3s ease-in-out;
@@ -72,11 +72,11 @@
     rx: 10;
     ry: 10;
   }
-  
+
   .paper-1:nth-child(2) {
     fill: #f2f2f2;
   }
-  
+
   .paper-1:nth-child(3) {
     fill: #ffffff;
   }
@@ -84,11 +84,11 @@
   .paper-2:nth-child(2) {
     fill: #f2f2f2;
   }
-  
+
   .paper-2:nth-child(3) {
     fill: #ffffff;
   }
-  
+
   .folder__front {
     fill: var(--folderColor);
     rx: 10;
@@ -96,11 +96,11 @@
     transform-origin: bottom;
     transition: all 0.3s ease-in-out;
   }
-  
+
   .folder-card:hover {
     transform: translateY(-5px);
   }
-  
+
   .folder-card:hover .paper-1 {
     y: 12;
     transform: translateY(0%);
@@ -110,14 +110,14 @@
     y: 22;
     transform: translateY(0%);
   }
-  
+
   .folder-card:hover .folder__front {
     rx: 13;
     ry: 13;
     y: 10; height:80;
     transform: skewY(0deg) scaleY(0.6);
   }
-  
+
   .folder-card:hover .folder__front.right {
     rx: 13;
     ry: 13;
@@ -154,73 +154,73 @@
 }
 
 
-  .dark\:pintree-bg-gray-900:is(.dark *) {
+  .dark\:feyoudao-bg-gray-900:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(17 20 24 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-bg-gray-800:is(.dark *) {
+  .dark\:feyoudao-bg-gray-800:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(34 37 42 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-bg-gray-700:is(.dark *) {
+  .dark\:feyoudao-bg-gray-700:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(39 42 48 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-bg-gray-600:is(.dark *) {
+  .dark\:feyoudao-bg-gray-600:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(45 49 57 / var(--tw-bg-opacity));
   }
 
 
-  .dark\:hover\:pintree-bg-gray-900:hover:is(.dark *) {
+  .dark\:hover\:feyoudao-bg-gray-900:hover:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(17 20 24 / var(--tw-bg-opacity));
   }
-  .dark\:hover\:pintree-bg-gray-800:hover:is(.dark *) {
+  .dark\:hover\:feyoudao-bg-gray-800:hover:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(34 37 42 / var(--tw-bg-opacity));
   }
-  .dark\:hover\:pintree-bg-gray-700:hover:is(.dark *) {
+  .dark\:hover\:feyoudao-bg-gray-700:hover:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(39 42 48 / var(--tw-bg-opacity));
   }
-  .dark\:hover\:pintree-bg-gray-600:hover:is(.dark *) {
+  .dark\:hover\:feyoudao-bg-gray-600:hover:is(.dark *) {
     --tw-bg-opacity: 1;
     background-color: rgb(45 49 57 / var(--tw-bg-opacity));
   }
 
 
-  .dark\:pintree-border-gray-900:is(.dark *) {
+  .dark\:feyoudao-border-gray-900:is(.dark *) {
     --tw-bg-opacity: 1;
     border-color: rgb(17 20 24 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-border-gray-800:is(.dark *) {
+  .dark\:feyoudao-border-gray-800:is(.dark *) {
     --tw-bg-opacity: 1;
     border-color: rgb(34 37 42 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-border-gray-700:is(.dark *) {
+  .dark\:feyoudao-border-gray-700:is(.dark *) {
     --tw-bg-opacity: 1;
     border-color: rgb(39 42 48 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-border-gray-600:is(.dark *) {
+  .dark\:feyoudao-border-gray-600:is(.dark *) {
     --tw-bg-opacity: 1;
     border-color: rgb(45 49 57 / var(--tw-bg-opacity));
   }
 
 
-  .dark\:pintree-ring-gray-900:is(.dark *) {
+  .dark\:feyoudao-ring-gray-900:is(.dark *) {
     --tw-bg-opacity: 1;
     --tw-ring-color: rgb(17 20 24 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-ring-gray-800:is(.dark *) {
+  .dark\:feyoudao-ring-gray-800:is(.dark *) {
     --tw-bg-opacity: 1;
     --tw-ring-color: rgb(34 37 42 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-ring-gray-700:is(.dark *) {
+  .dark\:feyoudao-ring-gray-700:is(.dark *) {
     --tw-bg-opacity: 1;
     --tw-ring-color: rgb(39 42 48 / var(--tw-bg-opacity));
   }
-  .dark\:pintree-ring-gray-600:is(.dark *) {
+  .dark\:feyoudao-ring-gray-600:is(.dark *) {
     --tw-bg-opacity: 1;
     --tw-ring-color: rgb(45 49 57 / var(--tw-bg-opacity));
   }
