@@ -5,120 +5,117 @@
     "title": "常用网站",
     "children": [
       {
-        "type": "folder",
+        "type": "header",
         "addDate": 1721893466002,
-        "title": "资源库",
-        "children": [
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "小呵爱分享资源库",
-            "icon": "https://q1.qlogo.cn/g?b=qq&nk=3111349763&s=640",
-            "url": "https://t.kuhehe.top/"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "flowus小呵爱分享资源库",
-            "icon": "https://q1.qlogo.cn/g?b=qq&nk=3111349763&s=640",
-            "url": "https://kuhehe.flowus.cn/share/51a76673-0e99-428c-a2e6-f5c47f89d3c2"
-          },
+        "title": "资源库"
+      },
 
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "漫漫资源搜索引擎",
-            "icon": "",
-            "url": "https://www.kdocs.cn/l/ctjtWO6dTKDN"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "香冻梨花雨26",
-            "icon": "",
-            "url": "https://link3.cc/xiangdonglihuayu26"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "永裴资源君",
-            "icon": "",
-            "url": "https://link3.cc/vip666888"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "一新资源站",
-            "icon": "",
-            "url": "https://link3.cc/syzh0755"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "图欧夸克资源小海洋",
-            "icon": "",
-            "url": "https://link3.cc/quarkresource"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "资料铺小木",
-            "icon": "",
-            "url": "https://link3.cc/mushen"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "橙子剧场",
-            "icon": "",
-            "url": "https://link3.cc/cztv"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "荔枝资源汇总",
-            "icon": "",
-            "url": "https://docs.qq.com/sheet/DTnZwc2dpVUZUbkhx?tab=xcpgqz"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "冷一白资源",
-            "icon": "",
-            "url": "https://docs.qq.com/sheet/DTmZEdXdzUHB4ckRh?tab=BB08J2"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "全网优质课程知识库",
-            "icon": "",
-            "url": "https://docs.qq.com/sheet/DRU5MWHZCTHFGQnhM?tab=qb1sze"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "阿坑同学",
-            "icon": "",
-            "url": "https://docs.qq.com/sheet/DR3lZSVliUU5waWV0?u=4c41a327f1cf4c4b8d23231671e3f0ea&tab=syqbxu"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "Tacit0924",
-            "icon": "",
-            "url": "https://docs.qq.com/doc/DQmx1WEdTRXpGeEZ6"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "CeruleanMX",
-            "icon": "",
-            "url": "https://docs.qq.com/aio/DSEFzVkVraWF1T1Vx"
-          }
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "小呵爱分享资源库",
+        "icon": "https://q1.qlogo.cn/g?b=qq&nk=3111349763&s=640",
+        "url": "https://t.kuhehe.top/"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "flowus小呵爱分享资源库",
+        "icon": "https://q1.qlogo.cn/g?b=qq&nk=3111349763&s=640",
+        "url": "https://kuhehe.flowus.cn/share/51a76673-0e99-428c-a2e6-f5c47f89d3c2"
+      },
 
-        ]
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "漫漫资源搜索引擎",
+        "icon": "",
+        "url": "https://www.kdocs.cn/l/ctjtWO6dTKDN"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "香冻梨花雨26",
+        "icon": "",
+        "url": "https://link3.cc/xiangdonglihuayu26"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "永裴资源君",
+        "icon": "",
+        "url": "https://link3.cc/vip666888"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "一新资源站",
+        "icon": "",
+        "url": "https://link3.cc/syzh0755"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "图欧夸克资源小海洋",
+        "icon": "",
+        "url": "https://link3.cc/quarkresource"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "资料铺小木",
+        "icon": "",
+        "url": "https://link3.cc/mushen"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "橙子剧场",
+        "icon": "",
+        "url": "https://link3.cc/cztv"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "荔枝资源汇总",
+        "icon": "",
+        "url": "https://docs.qq.com/sheet/DTnZwc2dpVUZUbkhx?tab=xcpgqz"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "冷一白资源",
+        "icon": "",
+        "url": "https://docs.qq.com/sheet/DTmZEdXdzUHB4ckRh?tab=BB08J2"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "全网优质课程知识库",
+        "icon": "",
+        "url": "https://docs.qq.com/sheet/DRU5MWHZCTHFGQnhM?tab=qb1sze"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "阿坑同学",
+        "icon": "",
+        "url": "https://docs.qq.com/sheet/DR3lZSVliUU5waWV0?u=4c41a327f1cf4c4b8d23231671e3f0ea&tab=syqbxu"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "Tacit0924",
+        "icon": "",
+        "url": "https://docs.qq.com/doc/DQmx1WEdTRXpGeEZ6"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "CeruleanMX",
+        "icon": "",
+        "url": "https://docs.qq.com/aio/DSEFzVkVraWF1T1Vx"
       }
     ]
   }
-
 ]

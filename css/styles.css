@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 2025-01-26 17:22:20 */
+.header-title {
+  position: relative;
+  transition: all 0.2s ease;
+}
+/* 2025-01-26 17:22:20 */
 
 .text-main-500{
   --tw-text-opacity: 1;
