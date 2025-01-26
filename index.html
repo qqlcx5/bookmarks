@@ -643,71 +643,75 @@
       // Render breadcrumbs
       renderBreadcrumbs(path);
 
-      // Separate folders and links
-      const folders = data.filter(item => item.type === 'folder');
-      // const links = data.filter(item => item.type === 'link').sort((a, b) => b.addDate - a.addDate);
-      const links = data.filter(item => item.type === 'link');
-      const headers = data.filter(item => item.type === 'header'); // 🧀新增header过滤
+      // Group data by header
+      const groupedData = [];
+      let currentGroup = null;
 
+      data.forEach(item => {
+        if (item.type === 'header') {
+          // Start a new group
+          currentGroup = {
+            header: item,
+            links: []
+          };
+          groupedData.push(currentGroup);
+        } else if (item.type === 'link' && currentGroup) {
+          // Add link to the current group
+          currentGroup.links.push(item);
+        } else if (item.type === 'folder') {
+          // Folders are handled separately
+          groupedData.push(item);
+        }
+      });
 
-      if (folders.length === 0 && links.length === 0) {
+      if (groupedData.length === 0) {
         showNoResultsMessage();
         return;
       }
 
-      // Create folder section
-      if (folders.length > 0) {
-        const folderSection = document.createElement('div');
-        folderSection.className = 'grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 2xl:grid-cols-12 gap-6';
-        folders.forEach(folder => {
-          const card = createFolderCard(folder.title, folder.children, path);
-          folderSection.appendChild(card);
-        });
-        container.appendChild(folderSection);
-      }
+      // Render grouped data
+      groupedData.forEach(group => {
+        if (group.header) {
+          // Render header and its links
+          const headerSection = document.createElement('div');
+          headerSection.className = 'mb-6'; // Add margin-bottom for spacing
 
-      // 创建header部分 🧀
-      if (headers.length > 0) {
-        const headerSection = document.createElement('div');
-        headerSection.className = 'grid grid-cols-1 gap-4 w-full';
-
-        headers.forEach(header => {
+          // Render header
           const headerElement = document.createElement('div');
           headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700';
 
-          // const icon = document.createElement('div');
-          // icon.className = 'h-5 w-5 bg-gray-200 dark:bg-gray-600 rounded-full flex items-center justify-center';
-          // icon.innerHTML = '<svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>';
-
           const title = document.createElement('h2');
           title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
-          title.textContent = header.title;
+          title.textContent = group.header.title;
 
-          // headerElement.appendChild(icon);
           headerElement.appendChild(title);
           headerSection.appendChild(headerElement);
-        });
 
-        container.appendChild(headerSection);
-      }
+          // Render links
+          if (group.links.length > 0) {
+            const linkSection = document.createElement('div');
+            linkSection.className = 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6 mt-4';
 
-      // Add separator line if there are links
-      if (folders.length > 0 && links.length > 0) {
-        const separator = document.createElement('hr');
-        separator.className = 'my-1 border-t-1 border-gray-200 dark:feyoudao-border-gray-800';
-        container.appendChild(separator);
-      }
+            group.links.forEach(link => {
+              const card = createCard(link.title, link.url, link.icon);
+              linkSection.appendChild(card);
+            });
 
-      // Create link section
-      if (links.length > 0) {
-        const linkSection = document.createElement('div');
-        linkSection.className = 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6';
-        links.forEach(link => {
-          const card = createCard(link.title, link.url, link.icon);
-          linkSection.appendChild(card);
-        });
-        container.appendChild(linkSection);
-      }
+            headerSection.appendChild(linkSection);
+          }
+
+          container.appendChild(headerSection);
+        } else if (group.type === 'folder') {
+          // Render folder
+          const folderSection = document.createElement('div');
+          folderSection.className = 'grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 2xl:grid-cols-12 gap-6 mb-6';
+
+          const card = createFolderCard(group.title, group.children, path);
+          folderSection.appendChild(card);
+
+          container.appendChild(folderSection);
+        }
+      });
 
       // Update sidebar active state
       updateSidebarActiveState(path);
