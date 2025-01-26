@@ -235,6 +235,94 @@
   </div>
 
   <script>
+      const jsonFiles = [
+        "json/feyoudao.json",
+        "json/V2FD.json",
+        "json/cheeseBookmark.json",
+        "json/integrateResources.json",
+      ];
+
+      function loadAllJsonFiles() {
+        return Promise.all(
+          jsonFiles.map((file) =>
+            fetch(file).then((response) => response.json())
+          )
+        ).then((results) => results.flat());
+      }
+      // 修改后的加载和渲染逻辑
+      function loadAndRenderJsonFiles() {
+        const container = document.getElementById("bookmarks");
+        let allData = [];
+
+        // 先立即加载并展示第一个文件
+        fetch(jsonFiles[0])
+          .then((response) => response.json())
+          .then((firstData) => {
+            allData = firstData;
+            initialRender(firstData);
+            // 加载完成后开始并行加载其他文件
+            Promise.all(
+              jsonFiles.slice(1).map((file) =>
+                fetch(file)
+                  .then((response) => response.json())
+                  .catch((error) => {
+                    console.error(`Error loading ${file}:`, error);
+                    return []; // 返回空数组避免中断
+                  })
+              )
+            ).then((otherResults) => {
+              // 合并后续数据
+              otherResults.forEach((data) => {
+                allData = mergeData(allData, data);
+              });
+              // 增量更新界面
+              incrementalUpdate(allData);
+            });
+          })
+          .catch((error) => {
+            console.error("Error loading initial file:", error);
+            showErrorState();
+          });
+
+        // 初始渲染
+        function initialRender(data) {
+          renderNavigation(data, document.getElementById("navigation"), true);
+          renderBookmarks(data, [{ title: "Bookmark", children: data }]);
+          document.getElementById("loading-spinner").style.display = "none";
+        }
+
+        // 数据合并逻辑（可根据需要增强）
+        function mergeData(existing, newData) {
+          // 简单合并示例，可根据实际数据结构优化
+          return [...existing, ...newData];
+        }
+
+        // 增量更新界面
+        function incrementalUpdate(mergedData) {
+          // 智能合并 DOM 更新（示例逻辑）
+          const currentPath = getCurrentBreadcrumbPath();
+          renderBookmarks(mergedData, currentPath);
+
+          // 或者只更新差异部分
+          // 这里需要根据实际数据结构实现更智能的对比更新
+        }
+
+        // 获取当前面包屑路径
+        function getCurrentBreadcrumbPath() {
+          const path = [];
+          document
+            .querySelectorAll("#breadcrumbs-path span")
+            .forEach((element) => {
+              path.push({
+                title: element.innerText,
+                children: [], // 这里需要根据实际数据结构补充
+              });
+            });
+          return path;
+        }
+    }
+
+
     document.addEventListener('DOMContentLoaded', () => {
       // Variables for sidebar elements
       const openSidebarButton = document.getElementById('open-sidebar-button');
@@ -269,12 +357,11 @@
 
     // Search functionality
     function searchBookmarks(query) {
-      fetch('json/feyoudao.json')
-        .then(response => response.json())
+      loadAllJsonFiles()
         .then(data => {
           const results = searchInData(data, query.toLowerCase());
           renderBookmarks(results, [{ title: 'Search Results', children: results }]);
-        })
+         })
         .catch(error => console.error('Error searching bookmarks:', error));
     }
 
@@ -301,8 +388,7 @@
 
     // Clear search results and reset UI
     function clearSearchResults() {
-      fetch('json/feyoudao.json')
-        .then(response => response.json())
+      loadAllJsonFiles()
         .then(data => {
           const secondLayer = data[0].children;
           renderNavigation(secondLayer, document.getElementById('navigation'));
@@ -662,9 +748,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Fetch and render data
-      fetch('json/feyoudao.json')
-        .then(response => response.json())
+      loadAllJsonFiles()
         .then(data => {
           // Hide loading spinner
           document.getElementById('loading-spinner').style.display = 'none';
@@ -688,7 +772,7 @@
           // Optionally hide the spinner and show an error message
           document.getElementById('loading-spinner').style.display = 'none';
         });
-    });
+    })
 
     // Event listener for theme toggle button
     themeToggleButton.addEventListener('click', toggleTheme);
