@@ -6,20 +6,6 @@
     "children": [
       {
         "type": "folder",
-        "addDate": 1723013885983,
-        "title": "飞机推荐",
-        "children": [
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "Akkcloud",
-            "icon": "https://logo.clearbit.com/mirror.akpnaca.com",
-            "url": "https://mirror.akpnaca.com/auth/register?code=tn8Grm"
-          }
-        ]
-      },
-      {
-        "type": "folder",
         "addDate": 1723013885984,
         "title": "个人使用",
         "children": [
@@ -176,48 +162,6 @@
             "title": "小鸟搜索|BirdieSearch",
             "icon": "https://logo.clearbit.com/www.birdiesearch.com",
             "url": "https://www.birdiesearch.com/#/"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "addDate": 1723013885988,
-        "title": "免费主机",
-        "children": [
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "免费空间",
-            "icon": "https://logo.clearbit.com/free.3v.do",
-            "url": "https://free.3v.do/index.html"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "Serv00.com » 首页",
-            "icon": "https://logo.clearbit.com/www.serv00.com",
-            "url": "https://www.serv00.com/"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "addDate": 1723013885988,
-        "title": "免费域名",
-        "children": [
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "US.KG Domain Registry and Management Authority",
-            "icon": "https://logo.clearbit.com/register.us.kg",
-            "url": "https://register.us.kg/auth/login?next=%2F"
-          },
-          {
-            "type": "link",
-            "addDate": 1722418271000,
-            "title": "| site.ac | Free Domain and Services | Register Now. Use Forever.",
-            "icon": "https://logo.clearbit.com/www.site.ac",
-            "url": "https://www.site.ac/"
           }
         ]
       },

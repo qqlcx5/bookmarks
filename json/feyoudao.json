@@ -121,6 +121,46 @@
         "title": "琉殇",
         "icon": "https://bu.dusays.com/2023/08/06/64cf1bb8261a5.png",
         "url": "https://docs.qq.com/aio/DSEFzVkVraWF1T1Vx"
+      },
+      {
+        "type": "header",
+        "addDate": 1722418271000,
+        "title": "各种导航站"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "快嘴科技",
+        "icon": "https://logo.clearbit.com/kkzui.com",
+        "url": "https://kkzui.com/"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "一糖导航",
+        "icon": "https://logo.clearbit.com/iitang.com",
+        "url": "https://iitang.com/"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "开发者导航",
+        "icon": "https://logo.clearbit.com/codernav.com",
+        "url": "https://codernav.com/"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "马哥导航",
+        "icon": "https://logo.clearbit.com/mgnav.com",
+        "url": "https://www.mgnav.com/"
+      },
+      {
+        "type": "link",
+        "addDate": 1722418271000,
+        "title": "WebRA",
+        "icon": "https://logo.clearbit.com/webra.top",
+        "url": "https://webra.top/"
       }
     ]
   }
