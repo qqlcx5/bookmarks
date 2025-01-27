@@ -5,6 +5,16 @@
 .header-title {
   position: relative;
   transition: all 0.2s ease;
+  user-select: none; /* 防止用户选择文本 */
+}
+
+.toggle-icon {
+  margin-left: auto; /* 将图标推到最右边 */
+  transition: transform 0.2s ease;
+}
+
+.link-section {
+  transition: opacity 0.2s ease;
 }
 /* 2025-01-26 17:22:20 */
 

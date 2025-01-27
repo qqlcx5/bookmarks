@@ -643,80 +643,149 @@
       // Render breadcrumbs
       renderBreadcrumbs(path);
 
-      // Group data by header
-      const groupedData = [];
-      let currentGroup = null;
+      // Separate folders, links, and headers
+      const folders = data.filter(item => item.type === 'folder');
+      const links = data.filter(item => item.type === 'link');
+      const headers = data.filter(item => item.type === 'header');
 
-      data.forEach(item => {
-        if (item.type === 'header') {
-          // Start a new group
-          currentGroup = {
-            header: item,
-            links: []
-          };
-          groupedData.push(currentGroup);
-        } else if (item.type === 'link' && currentGroup) {
-          // Add link to the current group
-          currentGroup.links.push(item);
-        } else if (item.type === 'folder') {
-          // Folders are handled separately
-          groupedData.push(item);
-        }
-      });
+      // Check if there are both links and headers (需要分组的情况)
+      const shouldGroup = links.length > 0 && headers.length > 0;
 
-      if (groupedData.length === 0) {
+      if (folders.length === 0 && links.length === 0) {
         showNoResultsMessage();
         return;
       }
 
-      // Render grouped data
-      groupedData.forEach(group => {
-        if (group.header) {
-          // Render header and its links
+      // Create folder section (保持不变)
+      if (folders.length > 0) {
+        const folderSection = document.createElement('div');
+        folderSection.className = 'grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 2xl:grid-cols-12 gap-6';
+        folders.forEach(folder => {
+          const card = createFolderCard(folder.title, folder.children, path);
+          folderSection.appendChild(card);
+        });
+        container.appendChild(folderSection);
+      }
+
+      // 如果需要分组
+      if (shouldGroup) {
+        // Group data by header
+        const groupedData = [];
+        let currentGroup = null;
+
+        data.forEach(item => {
+          if (item.type === 'header') {
+            // Start a new group
+            currentGroup = {
+              header: item,
+              links: [],
+              isExpanded: localStorage.getItem(`header-${item.title}`) !== 'false' // 默认展开，如果 localStorage 中存储为 false 则收缩
+            };
+            groupedData.push(currentGroup);
+          } else if (item.type === 'link' && currentGroup) {
+            // Add link to the current group
+            currentGroup.links.push(item);
+          }
+        });
+
+        // Render grouped data
+        groupedData.forEach(group => {
           const headerSection = document.createElement('div');
-          headerSection.className = 'mb-6'; // Add margin-bottom for spacing
+          headerSection.className = 'mb-4'; // Add margin-bottom for spacing
 
           // Render header
           const headerElement = document.createElement('div');
-          headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700';
+          headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700 cursor-pointer';
 
           const title = document.createElement('h2');
           title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
           title.textContent = group.header.title;
 
+          // Add toggle icon
+          const toggleIcon = document.createElement('span');
+          toggleIcon.className = 'toggle-icon transform transition-transform';
+          toggleIcon.innerHTML = group.isExpanded ? '▼' : '▶'; // 根据状态设置图标
+
           headerElement.appendChild(title);
+          headerElement.appendChild(toggleIcon);
           headerSection.appendChild(headerElement);
 
           // Render links
-          if (group.links.length > 0) {
-            const linkSection = document.createElement('div');
-            linkSection.className = 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6 mt-4';
+          const contentSection = document.createElement('div');
+          contentSection.className = 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-4 mt-4';
 
+          if (group.links.length > 0) {
             group.links.forEach(link => {
               const card = createCard(link.title, link.url, link.icon);
-              linkSection.appendChild(card);
+              contentSection.appendChild(card);
             });
-
-            headerSection.appendChild(linkSection);
           }
 
+          headerSection.appendChild(contentSection);
+
+          // Set initial visibility based on isExpanded
+          contentSection.style.display = group.isExpanded ? 'grid' : 'none';
+
+          // Toggle header expansion on click
+          headerElement.addEventListener('click', () => {
+            group.isExpanded = !group.isExpanded;
+            if (group.isExpanded) {
+              contentSection.style.display = 'grid';
+              toggleIcon.innerHTML = '▼';
+            } else {
+              contentSection.style.display = 'none';
+              toggleIcon.innerHTML = '▶';
+            }
+            // Save the state to localStorage
+            localStorage.setItem(`header-${group.header.title}`, group.isExpanded);
+          });
+
           container.appendChild(headerSection);
-        } else if (group.type === 'folder') {
-          // Render folder
-          const folderSection = document.createElement('div');
-          folderSection.className = 'grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 2xl:grid-cols-12 gap-6 mb-6';
+        });
+      } else {
+        // 如果不需要分组，保持原有逻辑
+        // 创建header部分
+        if (headers.length > 0) {
+          const headerSection = document.createElement('div');
+          headerSection.className = 'grid grid-cols-1 gap-4 w-full';
 
-          const card = createFolderCard(group.title, group.children, path);
-          folderSection.appendChild(card);
+          headers.forEach(header => {
+            const headerElement = document.createElement('div');
+            headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700';
 
-          container.appendChild(folderSection);
+            const title = document.createElement('h2');
+            title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
+            title.textContent = header.title;
+
+            headerElement.appendChild(title);
+            headerSection.appendChild(headerElement);
+          });
+
+          container.appendChild(headerSection);
         }
-      });
+
+        // Add separator line if there are links
+        if (folders.length > 0 && links.length > 0) {
+          const separator = document.createElement('hr');
+          separator.className = 'my-1 border-t-1 border-gray-200 dark:feyoudao-border-gray-800';
+          container.appendChild(separator);
+        }
+
+        // Create link section
+        if (links.length > 0) {
+          const linkSection = document.createElement('div');
+          linkSection.className = 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6';
+          links.forEach(link => {
+            const card = createCard(link.title, link.url, link.icon);
+            linkSection.appendChild(card);
+          });
+          container.appendChild(linkSection);
+        }
+      }
 
       // Update sidebar active state
       updateSidebarActiveState(path);
     }
-
     // Fetch and render data
     loadAllJsonFiles().then(data => {
         // Use the first layer of the data directly
