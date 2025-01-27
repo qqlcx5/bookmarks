@@ -237,7 +237,7 @@
   <script>
       const jsonFiles = [
         "json/feyoudao.json",
-        "json/V2FD.json",
+        "json/v2fds.json",
         "json/cheeseBookmark.json",
         "json/integrateResources.json",
       ];
@@ -645,9 +645,9 @@
       const headers = data.filter(item => item.type === 'header');
 
       // Check if there are both links and headers (需要分组的情况)
-      const shouldGroup = links.length > 0 && headers.length > 0;
+      const shouldGroup = (links.length > 0 || headers.find(o=> o.children)) && headers.length > 0;
 
-      if (folders.length === 0 && links.length === 0) {
+      if (folders.length === 0 && links.length === 0 && headers.length === 0) {
         showNoResultsMessage();
         return;
       }
@@ -657,7 +657,7 @@
         const folderSection = document.createElement('div');
         folderSection.className = 'grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 2xl:grid-cols-12 gap-6';
         folders.forEach(folder => {
-          const card = createFolderCard(folder.title, folder.children, path);
+          const card = createFolderCard(folder.title, folder.children || [], path);
           folderSection.appendChild(card);
         });
         container.appendChild(folderSection);
@@ -677,6 +677,13 @@
               links: [],
               isExpanded: localStorage.getItem(`header-${item.title}`) !== 'false' // 默认展开，如果 localStorage 中存储为 false 则收缩
             };
+            if(item.children && item.children.length > 0) {
+              item.children.forEach(child => {
+                if (child.type === 'link') {
+                  currentGroup.links.push(child);
+                }
+              });
+            }
             groupedData.push(currentGroup);
           } else if (item.type === 'link' && currentGroup) {
             // Add link to the current group
@@ -739,24 +746,19 @@
           container.appendChild(headerSection);
         });
       } else {
-        // 如果不需要分组，保持原有逻辑
         // 创建header部分
         if (headers.length > 0) {
           const headerSection = document.createElement('div');
           headerSection.className = 'grid grid-cols-1 gap-4 w-full';
-
           headers.forEach(header => {
             const headerElement = document.createElement('div');
             headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700';
-
             const title = document.createElement('h2');
             title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
             title.textContent = header.title;
-
             headerElement.appendChild(title);
             headerSection.appendChild(headerElement);
           });
-
           container.appendChild(headerSection);
         }
 
