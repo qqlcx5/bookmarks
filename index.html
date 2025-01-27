@@ -388,15 +388,12 @@
 
     // Clear search results and reset UI
     function clearSearchResults() {
-      loadAllJsonFiles()
-        .then(data => {
-          const secondLayer = data[0].children;
-          renderNavigation(secondLayer, document.getElementById('navigation'));
-          renderBookmarks(secondLayer, [{ title: 'Bookmark', children: secondLayer }]);
-          document.getElementById('searchInput').value = '';
-          document.getElementById('clearSearchButton').classList.add('hidden');
-        })
-        .catch(error => console.error('Error clearing search results:', error));
+      const initialData = JSON.parse(sessionStorage.getItem('initialData')); // 从sessionStorage中获取初始数据
+      if (initialData) {
+        renderBookmarks(initialData, [{ title: 'Bookmark', children: initialData }]);
+      }
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchButton').classList.add('hidden');
     }
 
     document.getElementById('clearSearchButton').addEventListener('click', clearSearchResults);
@@ -406,7 +403,6 @@
         .then(data => {
           const results = searchInData(data, query.toLowerCase());
           renderBookmarks(results, [{ title: 'Search Results', children: results }]);
-          document.getElementById('clearSearchButton').classList.remove('hidden');
         })
         .catch(error => console.error('Error searching bookmarks:', error));
     }
@@ -804,13 +800,24 @@
       })
       .catch(error => console.error('Error loading bookmarks:', error));
 
+    function debounce(func, wait) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    }
+
     // Search functionality on pressing Enter
-    document.getElementById('searchInput').addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        const query = event.target.value;
+    document.getElementById('searchInput').addEventListener('input', debounce(function (event) {
+      const query = event.target.value.trim();
+      if (query) {
         searchBookmarks(query);
+        document.getElementById('clearSearchButton').classList.remove('hidden');
+      } else {
+        clearSearchResults();
       }
-    });
+    }, 300)); // 300ms 防抖
 
     // Search functionality on button click
     document.getElementById('searchButton').addEventListener('click', function () {
@@ -846,29 +853,17 @@
       }
     }
 
+    // 在页面加载时保存初始数据
     document.addEventListener('DOMContentLoaded', () => {
       loadAllJsonFiles()
         .then(data => {
+          sessionStorage.setItem('initialData', JSON.stringify(data)); // 保存初始数据
+          // 渲染导航和书签
           // Hide loading spinner
           document.getElementById('loading-spinner').style.display = 'none';
-
-          // Use the first layer of the data directly
-          const firstLayer = data;
-          // Render navigation using the first layer of data
-          renderNavigation(firstLayer, document.getElementById('navigation'), true);
-          // Render bookmarks using the first layer of data, starting from the Bookmark
-          renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
-
-          // Automatically select and show the first item
-          if (firstLayer.length > 0) {
-            const firstItem = firstLayer[0];
-            updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
-            renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
-          }
         })
         .catch(error => {
           console.error('Error loading bookmarks:', error);
-          // Optionally hide the spinner and show an error message
           document.getElementById('loading-spinner').style.display = 'none';
         });
     })
