@@ -68,6 +68,57 @@
     }
   }
   </script>
+
+  <style>
+    /* 卡片载入动画 */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-animate {
+      animation: fadeInUp 0.3s ease-out forwards;
+      opacity: 0;
+    }
+
+    /* 增强卡片层次感 */
+    .card-shadow {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .card-shadow:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* 文件夹卡片颜色标签 */
+    .folder-tag {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* 优化移动端触摸反馈 */
+    @media (max-width: 768px) {
+      .touch-feedback:active {
+        background-color: rgba(0,0,0,0.05);
+      }
+
+      .dark .touch-feedback:active {
+        background-color: rgba(255,255,255,0.1);
+      }
+    }
+  </style>
 </head>
 
 <body class="h-full dark:feyoudao-bg-gray-900 bg-white">
@@ -412,15 +463,26 @@
     }
 
     // Create bookmark card element
-    function createCard(title, url, icon) {
+    function createCard(title, url, icon, index) {
       const card = document.createElement('div');
-      card.className = 'cursor-pointer flex items-center hover:shadow-sm transition-shadow p-4 bg-white shadow-sm ring-1 ring-gray-900/5 dark:feyoudao-ring-gray-800 rounded-lg hover:bg-gray-100 dark:feyoudao-bg-gray-900 dark:hover:feyoudao-bg-gray-800';
-      card.onclick = () => window.open(url, '_blank'); // Make the whole card clickable
+      card.className = 'cursor-pointer flex items-center hover:shadow-sm transition-shadow p-4 bg-white shadow-sm ring-1 ring-gray-900/5 dark:feyoudao-ring-gray-800 rounded-lg hover:bg-gray-100 dark:feyoudao-bg-gray-900 dark:hover:feyoudao-bg-gray-800 card-shadow touch-feedback card-animate';
+      card.style.animationDelay = `${index * 0.05}s`; // 错开动画时间
+      card.onclick = () => window.open(url, '_blank');
 
+      // 添加触摸反馈
+      card.addEventListener('touchstart', function() {
+        this.classList.add('active-touch');
+      }, { passive: true });
+
+      card.addEventListener('touchend', function() {
+        this.classList.remove('active-touch');
+      }, { passive: true });
+
+      // 其余卡片内容保持不变
       const cardIcon = document.createElement('img');
-      cardIcon.src = icon || 'assets/default-icon.svg'; // Use provided icon or default icon
+      cardIcon.src = icon || 'assets/default-icon.svg';
       cardIcon.alt = title;
-      cardIcon.className = 'w-8 h-8 mr-4 rounded-full flex-shrink-0 card-icon-bg'; // Smaller size and rounded
+      cardIcon.className = 'w-8 h-8 mr-4 rounded-full flex-shrink-0 card-icon-bg';
 
       // 检查图片加载失败时使用默认图标
       cardIcon.onerror = () => {
@@ -452,14 +514,32 @@
     }
 
     // Create folder card element
-    function createFolderCard(title, children, path) {
+    function createFolderCard(title, children, path, index, color) {
       const card = document.createElement('div');
-      card.className = 'folder-card text-gray rounded-lg cursor-pointer flex flex-col items-center p-3 transition-all duration-200 hover:shadow-md hover:translate-y-[-2px]';
+      card.className = 'folder-card text-gray rounded-lg cursor-pointer flex flex-col items-center p-3 transition-all duration-200 hover:shadow-md hover:translate-y-[-2px] relative card-animate touch-feedback';
+      card.style.animationDelay = `${index * 0.05}s`; // 错开动画时间
       card.onclick = () => {
         const newPath = path.concat({ title, children });
         renderBookmarks(children, newPath);
         updateSidebarActiveState(newPath);
       };
+
+      // 添加触摸反馈
+      card.addEventListener('touchstart', function() {
+        this.classList.add('active-touch');
+      }, { passive: true });
+
+      card.addEventListener('touchend', function() {
+        this.classList.remove('active-touch');
+      }, { passive: true });
+
+      // 添加颜色标签
+      if (color) {
+        const colorTag = document.createElement('div');
+        colorTag.className = 'folder-tag';
+        colorTag.style.backgroundColor = color;
+        card.appendChild(colorTag);
+      }
 
       const cardIcon = document.createElement('div');
       cardIcon.innerHTML = `
@@ -656,12 +736,14 @@
         return;
       }
 
-      // Create folder section (保持不变)
+      // Create folder section (添加动画和颜色标签)
       if (folders.length > 0) {
         const folderSection = document.createElement('div');
         folderSection.className = 'grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 2xl:grid-cols-12 gap-6';
-        folders.forEach(folder => {
-          const card = createFolderCard(folder.title, folder.children || [], path);
+        folders.forEach((folder, index) => {
+          // 从文件夹名称生成一个伪随机颜色（或者使用folder.color如果存在）
+          const folderColor = folder.color || generateColorFromString(folder.title);
+          const card = createFolderCard(folder.title, folder.children || [], path, index, folderColor);
           folderSection.appendChild(card);
         });
         container.appendChild(folderSection);
@@ -679,7 +761,8 @@
             currentGroup = {
               header: item,
               links: [],
-              isExpanded: localStorage.getItem(`header-${item.title}`) !== 'false' // 默认展开，如果 localStorage 中存储为 false 则收缩
+              isExpanded: localStorage.getItem(`header-${item.title}`) !== 'false', // 默认展开，如果 localStorage 中存储为 false 则收缩
+              color: item.color || generateColorFromString(item.title) // 添加颜色
             };
             if(item.children && item.children.length > 0) {
               item.children.forEach(child => {
@@ -702,7 +785,15 @@
 
           // Render header
           const headerElement = document.createElement('div');
-          headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700 cursor-pointer transition-colors duration-200 hover:bg-gray-50 dark:hover:feyoudao-bg-gray-800 rounded px-3';
+          headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700 cursor-pointer transition-colors duration-200 hover:bg-gray-50 dark:hover:feyoudao-bg-gray-800 rounded px-3 touch-feedback';
+
+          // 添加颜色标记
+          if (group.color) {
+            const colorMark = document.createElement('div');
+            colorMark.className = 'w-3 h-3 rounded-full mr-2 flex-shrink-0';
+            colorMark.style.backgroundColor = group.color;
+            headerElement.appendChild(colorMark);
+          }
 
           const title = document.createElement('h2');
           title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
@@ -722,8 +813,8 @@
           contentSection.className = 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-4 mt-4';
 
           if (group.links.length > 0) {
-            group.links.forEach(link => {
-              const card = createCard(link.title, link.url, link.icon);
+            group.links.forEach((link, index) => {
+              const card = createCard(link.title, link.url, link.icon, index);
               contentSection.appendChild(card);
             });
           }
@@ -756,7 +847,15 @@
           headerSection.className = 'grid grid-cols-1 gap-4 w-full';
           headers.forEach(header => {
             const headerElement = document.createElement('div');
-            headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700';
+            headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700 touch-feedback';
+
+            // 添加颜色标记
+            const headerColor = header.color || generateColorFromString(header.title);
+            const colorMark = document.createElement('div');
+            colorMark.className = 'w-3 h-3 rounded-full mr-2 flex-shrink-0';
+            colorMark.style.backgroundColor = headerColor;
+            headerElement.appendChild(colorMark);
+
             const title = document.createElement('h2');
             title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
             title.textContent = header.title;
@@ -777,8 +876,8 @@
         if (links.length > 0) {
           const linkSection = document.createElement('div');
           linkSection.className = 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-6';
-          links.forEach(link => {
-            const card = createCard(link.title, link.url, link.icon);
+          links.forEach((link, index) => {
+            const card = createCard(link.title, link.url, link.icon, index);
             linkSection.appendChild(card);
           });
           container.appendChild(linkSection);
@@ -788,6 +887,32 @@
       // Update sidebar active state
       updateSidebarActiveState(path);
     }
+
+    // 添加从字符串生成颜色的函数
+    function generateColorFromString(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+      }
+
+      // 使用预定义的柔和颜色数组
+      const colors = [
+        '#4299e1', // 蓝色
+        '#48bb78', // 绿色
+        '#ed8936', // 橙色
+        '#9f7aea', // 紫色
+        '#f56565', // 红色
+        '#38b2ac', // 青色
+        '#ecc94b', // 黄色
+        '#667eea', // 靛蓝色
+        '#fc8181', // 粉色
+        '#4fd1c5'  // 蓝绿色
+      ];
+
+      // 使用哈希值选择颜色
+      return colors[Math.abs(hash) % colors.length];
+    }
+
     // Fetch and render data
     loadAllJsonFiles().then(data => {
         // Use the first layer of the data directly
@@ -908,6 +1033,88 @@
       const yearElement = document.getElementById('currentYear');
       const currentYear = new Date().getFullYear();
       yearElement.textContent = currentYear;
+    });
+  </script>
+
+  <script>
+    // 优化移动端触摸体验
+    document.addEventListener('DOMContentLoaded', function() {
+      // 添加触摸反馈样式
+      const style = document.createElement('style');
+      style.textContent = `
+        .active-touch {
+          opacity: 0.7;
+          transform: scale(0.98);
+        }
+
+        /* 平滑滚动 */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #d1d5db;
+          border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+          background: #4b5563;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #9ca3af;
+        }
+
+        .dark ::-webkit-scrollbar-thumb:hover {
+          background: #6b7280;
+        }
+      `;
+      document.head.appendChild(style);
+
+      // 为所有可点击元素添加触摸反馈
+      function addTouchFeedback() {
+        const clickableElements = document.querySelectorAll('.cursor-pointer, button, a');
+        clickableElements.forEach(el => {
+          if (!el.classList.contains('touch-feedback')) {
+            el.classList.add('touch-feedback');
+
+            el.addEventListener('touchstart', function() {
+              this.classList.add('active-touch');
+            }, { passive: true });
+
+            el.addEventListener('touchend', function() {
+              this.classList.remove('active-touch');
+            }, { passive: true });
+
+            el.addEventListener('touchcancel', function() {
+              this.classList.remove('active-touch');
+            }, { passive: true });
+          }
+        });
+      }
+
+      // 初始添加触摸反馈
+      addTouchFeedback();
+
+      // 在DOM变化时重新添加触摸反馈
+      const observer = new MutationObserver(function(mutations) {
+        addTouchFeedback();
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
     });
   </script>
 
