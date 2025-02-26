@@ -132,7 +132,7 @@
             <img class="pl-2 h-8 w-auto lg:hidden" src="assets/logo.svg" alt="feyoudao">
             <!-- hidden lg:block -->
             <div class="relative w-72 h-full items-center justify-between">
-              <button id="searchButton" class="absolute h-full text-gray-400 rounded">
+              <button id="searchButton" class="absolute h-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 rounded pl-2">
                 <svg class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400" viewBox="0 0 20 20"
                   fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd"
@@ -141,15 +141,17 @@
                 </svg>
               </button>
               <input id="searchInput" type="search"
-                class="text-sm text-gray-900 dark:text-gray-400 pl-8 h-full border-0 focus:outline-none focus:ring-0 dark:feyoudao-bg-gray-900"
-                placeholder="Search...">
-              <button id="clearSearchButton" class="text-sm text-gray-500 mr-4 rounded hidden">Clear</button>
+                class="text-sm text-gray-900 dark:text-gray-400 pl-8 h-full border-0 focus:outline-none focus:ring-0 dark:feyoudao-bg-gray-900 w-full"
+                placeholder="搜索书签...">
+              <button id="clearSearchButton" class="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 absolute right-2 rounded hidden">
+                清除
+              </button>
             </div>
           </div>
           <a href="" class="hidden ml-4 font-extrabold text-2xl dark:text-white">前端有道</a>
           <div class="relative">
-            <button id="themeToggleButton" type="button" aria-label="Switch theme"
-              class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:feyoudao-bg-gray-900 dark:ring-white/10 dark:hover:ring-white/20">
+            <button id="themeToggleButton" type="button" aria-label="切换主题"
+              class="group rounded-full bg-white/90 p-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition-all duration-300 dark:feyoudao-bg-gray-900 dark:ring-white/10 dark:hover:ring-white/20 hover:shadow-md">
               <svg id="sunIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                 aria-hidden="true"
                 class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600">
@@ -173,8 +175,8 @@
 
       <!-- Main content area -->
       <main class="mt-4 dark:feyoudao-bg-gray-900 flex-grow">
-        <div id="loading-spinner" class="flex justify-center items-center h-full">
-          <div class="loader ease-linear rounded-full border-2 border-t-2 border-gray-400 h-6 w-6"></div>
+        <div id="loading-spinner" class="flex justify-center items-center h-64 w-full">
+          <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 border-t-teal-500 h-12 w-12 animate-spin"></div>
         </div>
         <div id="breadcrumbs" class="mt-2 px-6 text-sm text-gray-400 flex justify-between items-center">
           <div id="breadcrumbs-path" class="">
@@ -420,28 +422,28 @@
       cardIcon.alt = title;
       cardIcon.className = 'w-8 h-8 mr-4 rounded-full flex-shrink-0 card-icon-bg'; // Smaller size and rounded
 
-      // Check if the image URL returns 404 and replace it with the default icon if it does
+      // 检查图片加载失败时使用默认图标
       cardIcon.onerror = () => {
         cardIcon.src = 'assets/default-icon.svg';
       };
 
       const cardContent = document.createElement('div');
-      cardContent.className = 'flex flex-col overflow-hidden'; // Ensure the content is hidden if too long
+      cardContent.className = 'flex flex-col overflow-hidden flex-grow';
 
       const cardTitle = document.createElement('h2');
-      cardTitle.className = 'text-sm font-medium mb-1 truncate dark:text-gray-400';
+      cardTitle.className = 'text-sm font-medium mb-1 truncate dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-300';
       cardTitle.innerText = title;
       cardTitle.title = title;
 
-      // Clean URL by removing http(s) and trailing slash
+      // 清理URL，删除http(s)和尾部斜杠
       const cleanUrl = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
       const cardUrl = document.createElement('p');
       cardUrl.className = 'text-xs text-gray-400 dark:text-gray-600 dark:hover:text-gray-400 truncate';
-      cardUrl.innerText = cleanUrl; // Use cleaned URL
+      cardUrl.innerText = cleanUrl;
 
       cardContent.appendChild(cardTitle);
-      cardContent.appendChild(cardUrl); // Add URL paragraph
+      cardContent.appendChild(cardUrl);
 
       card.appendChild(cardIcon);
       card.appendChild(cardContent);
@@ -452,16 +454,16 @@
     // Create folder card element
     function createFolderCard(title, children, path) {
       const card = document.createElement('div');
-      card.className = 'folder-card text-gray rounded-lg cursor-pointer flex flex-col items-center';
+      card.className = 'folder-card text-gray rounded-lg cursor-pointer flex flex-col items-center p-3 transition-all duration-200 hover:shadow-md hover:translate-y-[-2px]';
       card.onclick = () => {
         const newPath = path.concat({ title, children });
         renderBookmarks(children, newPath);
-        updateSidebarActiveState(newPath); // Update sidebar active state
+        updateSidebarActiveState(newPath);
       };
 
       const cardIcon = document.createElement('div');
       cardIcon.innerHTML = `
-        <svg viewBox="0 0 100 80" class="folder__svg">
+        <svg viewBox="0 0 100 80" class="folder__svg w-16 h-16">
           <rect x="0" y="0" width="100" height="80" class="folder__back" />
           <rect x="15" y="8" width="70" height="60" class="paper-1" />
           <rect x="10" y="18" width="80" height="50" class="paper-2" />
@@ -472,7 +474,7 @@
       cardIcon.className = 'mb-2';
 
       const cardTitle = document.createElement('h2');
-      cardTitle.className = 'text-xs font-normal text-center w-full truncate dark:text-gray-400';
+      cardTitle.className = 'text-xs font-medium text-center w-full truncate dark:text-gray-400 transition-colors duration-200 group-hover:text-gray-900 dark:group-hover:text-white';
       cardTitle.innerText = title;
 
       card.appendChild(cardIcon);
@@ -483,22 +485,22 @@
 
     // Render sidebar navigation
     function renderNavigation(folders, container, isFirstRender = false, path = []) {
-      container.innerHTML = ''; // Clear previous content
-      // 过滤掉header类型 🧀
+      container.innerHTML = '';
+      // 过滤掉header类型
       folders = folders.filter(item => item.type !== 'header');
       folders.forEach((folder, index) => {
         if (folder.type === 'folder') {
           const navItem = document.createElement('li');
-          navItem.className = 'items-center group flex justify-between gap-x-3 rounded-md p-2 text-gray-700 dark:text-gray-400 hover:text-main-500 hover:bg-gray-50 dark:hover:feyoudao-bg-gray-800 bg-opacity-50';
+          navItem.className = 'items-center group flex justify-between gap-x-3 rounded-md p-2 text-gray-700 dark:text-gray-400 hover:text-main-500 hover:bg-gray-50 dark:hover:feyoudao-bg-gray-800 transition-colors duration-200';
 
           const navLinkContainer = document.createElement('div');
           navLinkContainer.className = 'flex items-center space-x-2 truncate';
 
           const folderIcon = document.createElement('span');
-          folderIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h4l2 2h7a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>';
+          folderIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h4l2 2h7a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>';
 
           const navLink = document.createElement('a');
-          navLink.className = 'flex text-sm leading-6 font-semibold dark:text-gray-400';
+          navLink.className = 'flex text-sm leading-6 font-medium dark:text-gray-400';
           navLink.innerText = folder.title;
 
           navLinkContainer.appendChild(folderIcon);
@@ -551,18 +553,17 @@
     // Render breadcrumbs for navigation
     function renderBreadcrumbs(path) {
       const breadcrumbsPath = document.getElementById('breadcrumbs-path');
-      breadcrumbsPath.innerHTML = ''; // Clear previous breadcrumbs
+      breadcrumbsPath.innerHTML = '';
 
       path.forEach((item, index) => {
         const breadcrumb = document.createElement('span');
-        breadcrumb.className = 'cursor-pointer hover:underline';
+        breadcrumb.className = 'cursor-pointer hover:underline hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-200';
         breadcrumb.innerText = item.title;
         breadcrumb.onclick = () => {
-          // Render bookmarks for the selected breadcrumb
           const newPath = path.slice(0, index + 1);
           renderBookmarks(item.children, newPath);
-          updateSidebarActiveState(newPath); // Update sidebar active state
-          document.getElementById('clearSearchButton').classList.add('hidden'); // Hide clear button when navigating through breadcrumbs
+          updateSidebarActiveState(newPath);
+          document.getElementById('clearSearchButton').classList.add('hidden');
         };
 
         breadcrumbsPath.appendChild(breadcrumb);
@@ -570,6 +571,7 @@
         if (index < path.length - 1) {
           const separator = document.createElement('span');
           separator.innerText = ' > ';
+          separator.className = 'mx-1 text-gray-400';
           breadcrumbsPath.appendChild(separator);
         }
       });
@@ -605,26 +607,26 @@
     // Show a message when no search results are found
     function showNoResultsMessage() {
       const container = document.getElementById('bookmarks');
-      container.innerHTML = ''; // Clear previous content
+      container.innerHTML = '';
 
       const messageContainer = document.createElement('div');
-      messageContainer.className = 'flex flex-col items-center justify-center h-full';
+      messageContainer.className = 'flex flex-col items-center justify-center h-64 w-full';
 
       const icon = document.createElement('svg');
       icon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-      icon.setAttribute('class', 'h-16 w-16 text-gray-500');
+      icon.setAttribute('class', 'h-16 w-16 text-gray-500 mb-4');
       icon.setAttribute('fill', 'none');
       icon.setAttribute('viewBox', '0 0 24 24');
       icon.setAttribute('stroke', 'currentColor');
       icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />';
 
       const title = document.createElement('h2');
-      title.className = 'text-gray-500 text-xl font-semibold mt-4';
-      title.innerText = 'Oops, Nothing to See Here!';
+      title.className = 'text-gray-500 text-xl font-semibold mb-2';
+      title.innerText = '没有找到相关结果';
 
       const message = document.createElement('p');
-      message.className = 'text-gray-500 mt-2';
-      message.innerText = 'Try another search or discover more cool stuff elsewhere!';
+      message.className = 'text-gray-500 text-center max-w-md';
+      message.innerText = '尝试使用其他关键词搜索，或者浏览其他分类发现更多精彩内容！';
 
       messageContainer.appendChild(icon);
       messageContainer.appendChild(title);
@@ -700,7 +702,7 @@
 
           // Render header
           const headerElement = document.createElement('div');
-          headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700 cursor-pointer';
+          headerElement.className = 'header-title flex items-center space-x-2 py-4 border-b dark:border-gray-700 cursor-pointer transition-colors duration-200 hover:bg-gray-50 dark:hover:feyoudao-bg-gray-800 rounded px-3';
 
           const title = document.createElement('h2');
           title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
@@ -708,8 +710,8 @@
 
           // Add toggle icon
           const toggleIcon = document.createElement('span');
-          toggleIcon.className = 'toggle-icon transform transition-transform';
-          toggleIcon.innerHTML = group.isExpanded ? '▼' : '▶'; // 根据状态设置图标
+          toggleIcon.className = 'toggle-icon transform transition-transform ml-2 text-gray-500';
+          toggleIcon.innerHTML = group.isExpanded ? '👇' : '👉';
 
           headerElement.appendChild(title);
           headerElement.appendChild(toggleIcon);
@@ -736,10 +738,10 @@
             group.isExpanded = !group.isExpanded;
             if (group.isExpanded) {
               contentSection.style.display = 'grid';
-              toggleIcon.innerHTML = '▼';
+              toggleIcon.innerHTML = '👇';
             } else {
               contentSection.style.display = 'none';
-              toggleIcon.innerHTML = '▶';
+              toggleIcon.innerHTML = '👉';
             }
             // Save the state to localStorage
             localStorage.setItem(`header-${group.header.title}`, group.isExpanded);
