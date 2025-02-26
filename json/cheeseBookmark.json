@@ -10,7 +10,7 @@
         "title": "产品运营",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915267,
             "title": "自媒体平台",
             "children": [
@@ -150,7 +150,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915268,
             "title": "视频自媒体",
             "children": [
@@ -290,7 +290,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915269,
             "title": "运营资讯",
             "children": [
@@ -486,7 +486,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915271,
             "title": "运营导航",
             "children": [
@@ -689,7 +689,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915272,
             "title": "公号榜",
             "children": [
@@ -745,7 +745,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915272,
             "title": "短视频榜",
             "children": [
@@ -815,7 +815,7 @@
         "title": "新闻资讯  | ",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915272,
             "title": "国内热榜",
             "children": [
@@ -927,7 +927,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915273,
             "title": "国外热榜",
             "children": [
@@ -1046,7 +1046,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915274,
             "title": "社交网站",
             "children": [
@@ -1214,7 +1214,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915274,
             "title": "问答网站",
             "children": [
@@ -1375,7 +1375,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915278,
             "title": "RSS阅读",
             "children": [
@@ -1578,7 +1578,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915279,
             "title": "国内新闻",
             "children": [
@@ -1690,7 +1690,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915279,
             "title": "海外新闻",
             "children": [
@@ -1879,7 +1879,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915280,
             "title": "图解新闻",
             "children": [
@@ -2068,7 +2068,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915281,
             "title": "大数据",
             "children": [
@@ -2201,7 +2201,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915281,
             "title": "信息查询",
             "children": [
@@ -2376,7 +2376,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915282,
             "title": "搜索指数",
             "children": [
@@ -2439,7 +2439,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915283,
             "title": "互联网指数",
             "children": [
@@ -2544,7 +2544,7 @@
         "title": "资源搜索",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915283,
             "title": "搜索引擎",
             "children": [
@@ -2698,7 +2698,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915284,
             "title": "搜索镜像",
             "children": [
@@ -2817,7 +2817,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915284,
             "title": "聚合搜索",
             "children": [
@@ -2950,7 +2950,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915285,
             "title": "特色搜索",
             "children": [
@@ -3090,7 +3090,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915286,
             "title": "图片搜索",
             "children": [
@@ -3237,7 +3237,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915286,
             "title": "免费图库",
             "children": [
@@ -3419,7 +3419,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915287,
             "title": "专用图库",
             "children": [
@@ -3531,7 +3531,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915287,
             "title": "以图搜图",
             "children": [
@@ -3797,7 +3797,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915289,
             "title": "GIF 搜索",
             "children": [
@@ -3986,7 +3986,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915289,
             "title": "壁纸图库",
             "children": [
@@ -4133,7 +4133,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915290,
             "title": "特色壁纸",
             "children": [
@@ -4301,7 +4301,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915291,
             "title": "网盘搜索¹",
             "children": [
@@ -4434,7 +4434,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915291,
             "title": "网盘搜索²",
             "children": [
@@ -4616,7 +4616,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915292,
             "title": "BT 磁力",
             "children": [
@@ -4875,7 +4875,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915293,
             "title": "磁力工具",
             "children": [
@@ -5036,12 +5036,12 @@
         "title": "在线工具",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915294,
             "title": "小书签栏",
             "children": [
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915294,
                 "title": "小书签",
                 "children": [
@@ -5153,7 +5153,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915295,
                 "title": "工具",
                 "children": [
@@ -5307,7 +5307,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915296,
                 "title": "下载",
                 "children": [
@@ -5461,7 +5461,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915298,
                 "title": "网页",
                 "children": [
@@ -5622,7 +5622,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915299,
                 "title": "阅读",
                 "children": [
@@ -5783,7 +5783,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915301,
                 "title": "文字",
                 "children": [
@@ -5909,7 +5909,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915303,
                 "title": "翻译",
                 "children": [
@@ -6056,7 +6056,7 @@
                 "url": "https://separator.mayastudios.com/index.php?t=horz#"
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915305,
                 "title": "搜索",
                 "children": [
@@ -6231,7 +6231,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915306,
                 "title": "搜索引擎",
                 "children": [
@@ -6413,7 +6413,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915308,
                 "title": "边栏搜索",
                 "children": [
@@ -6574,7 +6574,7 @@
                 "url": "https://separator.mayastudios.com/index.php?t=horz##"
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915309,
                 "title": "链接",
                 "children": [
@@ -6742,7 +6742,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915311,
                 "title": "图像",
                 "children": [
@@ -6889,7 +6889,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915313,
                 "title": "表格",
                 "children": [
@@ -7001,7 +7001,7 @@
                 "url": "https://separator.mayastudios.com/index.php?t=horz###"
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915314,
                 "title": "开发",
                 "children": [
@@ -7169,7 +7169,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915316,
                 "title": "设计",
                 "children": [
@@ -7358,7 +7358,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915318,
                 "title": "站长",
                 "children": [
@@ -7547,7 +7547,7 @@
                 ]
               },
               {
-                "type": "folder",
+                "type": "header",
                 "addDate": 1724381915319,
                 "title": "Chrome页面",
                 "children": [
@@ -7654,7 +7654,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915320,
             "title": "实用工具",
             "children": [
@@ -7899,7 +7899,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915321,
             "title": "特殊字符",
             "children": [
@@ -8130,7 +8130,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915322,
             "title": "文字工具",
             "children": [
@@ -8305,7 +8305,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915323,
             "title": "在线设计",
             "children": [
@@ -8543,7 +8543,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915324,
             "title": "图片工具",
             "children": [
@@ -8879,7 +8879,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915325,
             "title": "图片编辑",
             "children": [
@@ -9117,7 +9117,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915326,
             "title": "图片智能¹",
             "children": [
@@ -9369,7 +9369,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915328,
             "title": "图片智能²",
             "children": [
@@ -9600,7 +9600,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915329,
             "title": "图片智能³",
             "children": [
@@ -9838,7 +9838,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915330,
             "title": "生成神器",
             "children": [
@@ -10230,7 +10230,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915332,
             "title": "音频工具",
             "children": [
@@ -10405,7 +10405,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915333,
             "title": "视频工具¹",
             "children": [
@@ -10636,7 +10636,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915334,
             "title": "视频工具²",
             "children": [
@@ -10790,7 +10790,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915334,
             "title": "视频解析¹",
             "children": [
@@ -11042,7 +11042,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915336,
             "title": "视频解析²",
             "children": [
@@ -11196,7 +11196,7 @@
         "title": "在线办公  | ",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915336,
             "title": "电子邮箱",
             "children": [
@@ -11525,7 +11525,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915338,
             "title": "安全隐私",
             "children": [
@@ -11679,7 +11679,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915338,
             "title": "谷歌应用",
             "children": [
@@ -11903,7 +11903,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915339,
             "title": "链接分享",
             "children": [
@@ -12029,7 +12029,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915340,
             "title": "文本分享",
             "children": [
@@ -12218,7 +12218,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915341,
             "title": "图片分享",
             "children": [
@@ -12323,7 +12323,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915341,
             "title": "文件分享",
             "children": [
@@ -12498,7 +12498,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915342,
             "title": "大厂网盘",
             "children": [
@@ -12631,7 +12631,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915343,
             "title": "在线文档",
             "children": [
@@ -12813,7 +12813,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915343,
             "title": "办公常用",
             "children": [
@@ -12988,7 +12988,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915344,
             "title": "PDF工具",
             "children": [
@@ -13149,7 +13149,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915345,
             "title": "排版工具",
             "children": [
@@ -13338,7 +13338,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915346,
             "title": "Markdown",
             "children": [
@@ -13436,7 +13436,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915346,
             "title": "公众号助手",
             "children": [
@@ -13639,7 +13639,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915347,
             "title": "思维导图",
             "children": [
@@ -13842,7 +13842,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915348,
             "title": "PPT 模版",
             "children": [
@@ -14038,7 +14038,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915349,
             "title": "信息可视化",
             "children": [
@@ -14213,7 +14213,7 @@
         "title": "哲学心理",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915349,
             "title": "哲学",
             "children": [
@@ -14374,7 +14374,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915350,
             "title": "哲学 · 博主",
             "children": [
@@ -14542,7 +14542,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915351,
             "title": "宗教学",
             "children": [
@@ -14570,7 +14570,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915351,
             "title": "心理学",
             "children": [
@@ -14696,7 +14696,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915352,
             "title": "心理学 · 博主",
             "children": [
@@ -14738,7 +14738,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915352,
             "title": "学习方法",
             "children": [
@@ -14885,7 +14885,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915353,
             "title": "高效工作",
             "children": [
@@ -14941,7 +14941,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915353,
             "title": "TED演讲",
             "children": [
@@ -15095,7 +15095,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915354,
             "title": "在线课堂",
             "children": [
@@ -15214,7 +15214,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915354,
             "title": "大学课程",
             "children": [
@@ -15410,7 +15410,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915355,
             "title": "学术考研¹",
             "children": [
@@ -15634,7 +15634,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915356,
             "title": "学术考研²",
             "children": [
@@ -15830,7 +15830,7 @@
         "title": "社会科学",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915357,
             "title": "政治学",
             "children": [
@@ -15921,7 +15921,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915358,
             "title": "政治学 · 博主",
             "children": [
@@ -16082,7 +16082,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915358,
             "title": "经济学",
             "children": [
@@ -16201,7 +16201,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915359,
             "title": "经济学 · 博主",
             "children": [
@@ -16320,7 +16320,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915360,
             "title": "金融理财",
             "children": [
@@ -16488,7 +16488,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915360,
             "title": "财经博主",
             "children": [
@@ -16621,7 +16621,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915361,
             "title": "社会学",
             "children": [
@@ -16740,7 +16740,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915361,
             "title": "军事学",
             "children": [
@@ -16838,7 +16838,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915362,
             "title": "法律学",
             "children": [
@@ -17020,7 +17020,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915363,
             "title": "统计学",
             "children": [
@@ -17160,7 +17160,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915363,
             "title": "历史学",
             "children": [
@@ -17349,7 +17349,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915364,
             "title": "历史学 · 博主",
             "children": [
@@ -17510,7 +17510,7 @@
         "title": "英语学习",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915365,
             "title": "翻译词典",
             "children": [
@@ -17720,7 +17720,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915366,
             "title": "专用词典¹",
             "children": [
@@ -17902,7 +17902,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915367,
             "title": "专用词典²",
             "children": [
@@ -18056,7 +18056,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915367,
             "title": "英语网站",
             "children": [
@@ -18231,7 +18231,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915368,
             "title": "英语资源",
             "children": [
@@ -18427,7 +18427,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915369,
             "title": "单词词汇",
             "children": [
@@ -18560,7 +18560,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915370,
             "title": "听力口语",
             "children": [
@@ -18700,7 +18700,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915370,
             "title": "口语博主",
             "children": [
@@ -18861,7 +18861,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915371,
             "title": "阅读理解",
             "children": [
@@ -18952,7 +18952,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915371,
             "title": "英语语法",
             "children": [
@@ -19134,7 +19134,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915372,
             "title": "写作词典",
             "children": [
@@ -19309,7 +19309,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915373,
             "title": "写作建议",
             "children": [
@@ -19456,7 +19456,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915374,
             "title": "语言学",
             "children": [
@@ -19617,7 +19617,7 @@
         "title": "自然科学  | ",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915374,
             "title": "综合科普¹",
             "children": [
@@ -19771,7 +19771,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915375,
             "title": "综合科普²",
             "children": [
@@ -19904,7 +19904,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915376,
             "title": "物理学",
             "children": [
@@ -19981,7 +19981,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915376,
             "title": "物理学 · 博主",
             "children": [
@@ -20163,7 +20163,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915377,
             "title": "数学",
             "children": [
@@ -20338,7 +20338,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915378,
             "title": "化学",
             "children": [
@@ -20464,7 +20464,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915379,
             "title": "生物学",
             "children": [
@@ -20639,7 +20639,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915379,
             "title": "生物学 · 博主",
             "children": [
@@ -20786,7 +20786,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915380,
             "title": "天文学",
             "children": [
@@ -21052,7 +21052,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915382,
             "title": "天文学 · 博主",
             "children": [
@@ -21164,7 +21164,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915382,
             "title": "地理学",
             "children": [
@@ -21360,7 +21360,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915383,
             "title": "地理学 · 博主",
             "children": [
@@ -21514,7 +21514,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915384,
             "title": "地图资源",
             "children": [
@@ -21682,7 +21682,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915385,
             "title": "地图制作",
             "children": [
@@ -21808,7 +21808,7 @@
         "title": "科技数码",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915385,
             "title": "科技新闻",
             "children": [
@@ -21892,7 +21892,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915386,
             "title": "操作系统",
             "children": [
@@ -22088,7 +22088,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915386,
             "title": "互联网",
             "children": [
@@ -22214,7 +22214,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915387,
             "title": "Apple ",
             "children": [
@@ -22263,7 +22263,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915387,
             "title": "Apple · 博主",
             "children": [
@@ -22361,7 +22361,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915388,
             "title": "硬件数码",
             "children": [
@@ -22480,7 +22480,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915388,
             "title": "硬件数码 · 博主",
             "children": [
@@ -22676,7 +22676,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915389,
             "title": "摄影器材",
             "children": [
@@ -22739,7 +22739,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915389,
             "title": "电脑装机",
             "children": [
@@ -22809,7 +22809,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915390,
             "title": "天梯图",
             "children": [
@@ -22956,7 +22956,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915390,
             "title": "汽车之家",
             "children": [
@@ -23061,7 +23061,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915391,
             "title": "工业制造",
             "children": [
@@ -23173,7 +23173,7 @@
         "title": "软件开发",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915391,
             "title": "发现应用",
             "children": [
@@ -23460,7 +23460,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915393,
             "title": "软件推荐",
             "children": [
@@ -23551,7 +23551,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915393,
             "title": "Win 软件¹",
             "children": [
@@ -23775,7 +23775,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915394,
             "title": "Win 软件²",
             "children": [
@@ -23992,7 +23992,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915395,
             "title": "Mac 软件",
             "children": [
@@ -24251,7 +24251,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915396,
             "title": "安卓应用",
             "children": [
@@ -24398,7 +24398,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915397,
             "title": "iOS 应用",
             "children": [
@@ -24552,7 +24552,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915398,
             "title": "GitHub",
             "children": [
@@ -24776,7 +24776,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915399,
             "title": "编程开发",
             "children": [
@@ -24916,7 +24916,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915399,
             "title": "开发手册",
             "children": [
@@ -25224,7 +25224,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915401,
             "title": "网站建设",
             "children": [
@@ -25385,7 +25385,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915401,
             "title": "网页设计",
             "children": [
@@ -25651,7 +25651,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915403,
             "title": "站长工具",
             "children": [
@@ -25833,7 +25833,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915404,
             "title": "SEO工具",
             "children": [
@@ -26022,7 +26022,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915404,
             "title": "前端工具",
             "children": [
@@ -26400,7 +26400,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915406,
             "title": "Chrome",
             "children": [
@@ -26680,7 +26680,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915408,
             "title": "Firefox",
             "children": [
@@ -26897,7 +26897,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915409,
             "title": "浏览器开发",
             "children": [
@@ -27289,7 +27289,7 @@
         "title": "平面设计   | ",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915410,
             "title": "资讯灵感",
             "children": [
@@ -27471,7 +27471,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915411,
             "title": "设计教程",
             "children": [
@@ -27660,7 +27660,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915412,
             "title": "设计博主",
             "children": [
@@ -27695,7 +27695,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915412,
             "title": "国内素材",
             "children": [
@@ -27863,7 +27863,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915413,
             "title": "国外素材",
             "children": [
@@ -27954,7 +27954,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915413,
             "title": "模板素材",
             "children": [
@@ -28059,7 +28059,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915414,
             "title": "ICON 素材",
             "children": [
@@ -28444,7 +28444,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915415,
             "title": "LOGO 素材",
             "children": [
@@ -28654,7 +28654,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915416,
             "title": "LOGO 设计",
             "children": [
@@ -28857,7 +28857,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915417,
             "title": "PNG素材",
             "children": [
@@ -28955,7 +28955,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915417,
             "title": "插画素材",
             "children": [
@@ -29081,7 +29081,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915418,
             "title": "矢量素材",
             "children": [
@@ -29200,7 +29200,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915418,
             "title": "背景素材",
             "children": [
@@ -29417,7 +29417,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915419,
             "title": "字体素材",
             "children": [
@@ -29599,7 +29599,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915420,
             "title": "字体工具",
             "children": [
@@ -29774,7 +29774,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915421,
             "title": "配色方案¹",
             "children": [
@@ -29921,7 +29921,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915422,
             "title": "配色方案²",
             "children": [
@@ -30222,7 +30222,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915423,
             "title": "交互设计",
             "children": [
@@ -30355,7 +30355,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915423,
             "title": "设计规范",
             "children": [
@@ -30530,7 +30530,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915424,
             "title": "设计游戏",
             "children": [
@@ -30628,7 +30628,7 @@
         "title": "文化艺术",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915425,
             "title": "摄影艺术",
             "children": [
@@ -30929,7 +30929,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915426,
             "title": "摄影后期",
             "children": [
@@ -31111,7 +31111,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915427,
             "title": "绘画艺术",
             "children": [
@@ -31251,7 +31251,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915428,
             "title": "漫画网站",
             "children": [
@@ -31398,7 +31398,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915428,
             "title": "博物馆",
             "children": [
@@ -31538,7 +31538,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915429,
             "title": "电影搜索",
             "children": [
@@ -31608,7 +31608,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915429,
             "title": "国内影视",
             "children": [
@@ -31713,7 +31713,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915430,
             "title": "海外影视",
             "children": [
@@ -31804,7 +31804,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915430,
             "title": "影视剧集",
             "children": [
@@ -31986,7 +31986,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915431,
             "title": "动漫番剧",
             "children": [
@@ -32154,7 +32154,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915432,
             "title": "纪录片",
             "children": [
@@ -32280,7 +32280,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915432,
             "title": "电影下载",
             "children": [
@@ -32462,7 +32462,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915433,
             "title": "电影字幕",
             "children": [
@@ -32609,7 +32609,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915434,
             "title": "电影频道",
             "children": [
@@ -32847,7 +32847,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915435,
             "title": "电影博主¹",
             "children": [
@@ -32945,7 +32945,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915435,
             "title": "电影博主²",
             "children": [
@@ -33057,7 +33057,7 @@
         "title": "音乐视频",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915436,
             "title": "音乐网站",
             "children": [
@@ -33190,7 +33190,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915436,
             "title": "电台FM",
             "children": [
@@ -33323,7 +33323,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915437,
             "title": "白噪音",
             "children": [
@@ -33519,7 +33519,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915438,
             "title": "音乐下载",
             "children": [
@@ -33680,7 +33680,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915438,
             "title": "音乐博主",
             "children": [
@@ -33848,7 +33848,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915439,
             "title": "音乐相关",
             "children": [
@@ -34016,7 +34016,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915440,
             "title": "视频网站",
             "children": [
@@ -34170,7 +34170,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915441,
             "title": "电视直播",
             "children": [
@@ -34268,7 +34268,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915441,
             "title": "体育直播",
             "children": [
@@ -34352,7 +34352,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915441,
             "title": "音效素材",
             "children": [
@@ -34534,7 +34534,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915442,
             "title": "配乐素材",
             "children": [
@@ -34772,7 +34772,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915443,
             "title": "视频素材",
             "children": [
@@ -34905,7 +34905,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915444,
             "title": "视频后期",
             "children": [
@@ -35052,7 +35052,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915444,
             "title": "视频制作¹",
             "children": [
@@ -35185,7 +35185,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915445,
             "title": "视频制作²",
             "children": [
@@ -35297,7 +35297,7 @@
         "title": "娱乐休闲",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915446,
             "title": "表情包",
             "children": [
@@ -35402,7 +35402,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915446,
             "title": "网络模因",
             "children": [
@@ -35535,7 +35535,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915447,
             "title": "幽默有趣",
             "children": [
@@ -35647,7 +35647,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915447,
             "title": "假装艺术",
             "children": [
@@ -35829,7 +35829,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915448,
             "title": "Vlogger",
             "children": [
@@ -35927,7 +35927,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915448,
             "title": "搞笑博主",
             "children": [
@@ -36060,7 +36060,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915449,
             "title": "快乐源泉",
             "children": [
@@ -36179,7 +36179,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915450,
             "title": "旅游博主",
             "children": [
@@ -36200,7 +36200,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915450,
             "title": "美食博主",
             "children": [
@@ -36403,7 +36403,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915451,
             "title": "萌宠博主",
             "children": [
@@ -36571,7 +36571,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915451,
             "title": "体育运动",
             "children": [
@@ -36669,7 +36669,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915452,
             "title": "健身减肥",
             "children": [
@@ -36802,7 +36802,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915452,
             "title": "打发时间",
             "children": [
@@ -37068,7 +37068,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915454,
             "title": "寓教于乐",
             "children": [
@@ -37362,7 +37362,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz####"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915456,
             "title": "在线游戏",
             "children": [
@@ -37530,7 +37530,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915456,
             "title": "经典游戏",
             "children": [
@@ -37796,7 +37796,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915458,
             "title": "桌面游戏",
             "children": [
@@ -37887,7 +37887,7 @@
         "title": "文学知识   | ",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915458,
             "title": "在线阅读",
             "children": [
@@ -38048,7 +38048,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915459,
             "title": "阅读工具",
             "children": [
@@ -38160,7 +38160,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915459,
             "title": "书单推荐",
             "children": [
@@ -38356,7 +38356,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915460,
             "title": "读书博主",
             "children": [
@@ -38454,7 +38454,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915461,
             "title": "Z-Library",
             "children": [
@@ -38594,7 +38594,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915461,
             "title": "电子书¹",
             "children": [
@@ -38965,7 +38965,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915463,
             "title": "电子书²",
             "children": [
@@ -39273,7 +39273,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915465,
             "title": "文档搜索",
             "children": [
@@ -39462,7 +39462,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915466,
             "title": "百科全书",
             "children": [
@@ -39623,7 +39623,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915466,
             "title": "行业百科",
             "children": [
@@ -39756,7 +39756,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915467,
             "title": "百科词条",
             "children": [
@@ -39896,7 +39896,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915468,
             "title": "中文词典",
             "children": [
@@ -40085,7 +40085,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915469,
             "title": "词典工具",
             "children": [
@@ -40316,7 +40316,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915470,
             "title": "古诗词",
             "children": [
@@ -40519,7 +40519,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz###"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915471,
             "title": "段子手",
             "children": [
@@ -40652,7 +40652,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915472,
             "title": "段子库",
             "children": [
@@ -40834,7 +40834,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915473,
             "title": "话术生成器",
             "children": [
@@ -41128,7 +41128,7 @@
         "title": "生活频道",
         "children": [
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915474,
             "title": "生活助手",
             "children": [
@@ -41345,7 +41345,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915475,
             "title": "药品健康",
             "children": [
@@ -41471,7 +41471,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915476,
             "title": "美食攻略",
             "children": [
@@ -41569,7 +41569,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915476,
             "title": "本地活动",
             "children": [
@@ -41681,7 +41681,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915477,
             "title": "出门旅行",
             "children": [
@@ -41793,7 +41793,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915477,
             "title": "品味提升",
             "children": [
@@ -41891,7 +41891,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz#"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915478,
             "title": "网上购物",
             "children": [
@@ -42010,7 +42010,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915478,
             "title": "省钱攻略",
             "children": [
@@ -42157,7 +42157,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915479,
             "title": "招聘简历",
             "children": [
@@ -42325,7 +42325,7 @@
             "url": "https://separator.mayastudios.com/index.php?t=horz##"
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915480,
             "title": "电商运营",
             "children": [
@@ -42472,7 +42472,7 @@
             ]
           },
           {
-            "type": "folder",
+            "type": "header",
             "addDate": 1724381915480,
             "title": "电商导航",
             "children": [
