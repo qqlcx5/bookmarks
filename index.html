@@ -125,7 +125,7 @@
 
   <div>
     <!-- Mobile Off-Canvas Menu -->
-    <div id="off-canvas-menu" class="relative z-50 lg:hidden hidden" role="dialog" aria-modal="true">
+    <div id="off-canvas-menu" class="relative z-50 hidden" role="dialog" aria-modal="true">
       <div id="off-canvas-backdrop"
         class="fixed inset-0 bg-gray-900/80 opacity-0 transition-opacity ease-linear duration-300"></div>
       <div class="fixed inset-0 flex">
@@ -565,10 +565,11 @@
     }
 
     // Render sidebar navigation
-    function renderNavigation(folders, container, isFirstRender = false, path = []) {
+    function renderNavigation(folders, container, isFirstRender = false, parentPath = []) {
       container.innerHTML = '';
       // 过滤掉header类型
       folders = folders.filter(item => item.type !== 'header');
+
       folders.forEach((folder, index) => {
         if (folder.type === 'folder') {
           const navItem = document.createElement('li');
@@ -600,7 +601,9 @@
           if (folder.children && folder.children.length > 0) {
             const subList = document.createElement('ul');
             subList.className = 'ml-4 space-y-2 hidden';
-            renderNavigation(folder.children, subList, false, path.concat({ title: folder.title, children: folder.children }));
+            // 传递当前路径到子文件夹
+            const currentPath = [...parentPath, { title: folder.title, children: folder.children }];
+            renderNavigation(folder.children, subList, false, currentPath);
             container.appendChild(subList);
 
             navItem.onclick = (e) => {
@@ -611,14 +614,18 @@
               if (subList.children.length > 0) {
                 toggleIcon.classList.toggle('rotate-90');
               }
-              renderBookmarks(folder.children, path.concat({ title: folder.title, children: folder.children }));
+              // 使用完整的路径渲染面包屑
+              const fullPath = [{ title: 'Bookmark', children: folders }, ...currentPath];
+              renderBookmarks(folder.children, fullPath);
             };
           } else {
             navItem.onclick = (e) => {
               e.stopPropagation();
               document.querySelectorAll('#navigation .sidebar-active').forEach(el => el.classList.remove('sidebar-active'));
               navItem.classList.add('sidebar-active');
-              renderBookmarks(folder.children, path.concat({ title: folder.title, children: folder.children }));
+              // 使用完整的路径渲染面包屑
+              const fullPath = [{ title: 'Bookmark', children: folders }, ...parentPath, { title: folder.title, children: folder.children }];
+              renderBookmarks(folder.children, fullPath);
             };
           }
         }
@@ -632,7 +639,7 @@
 
       path.forEach((item, index) => {
         const breadcrumb = document.createElement('span');
-        breadcrumb.className = 'cursor-pointer hover:underline hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-200';
+        breadcrumb.className = 'cursor-pointer hover:underline hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-200 touch-feedback';
         breadcrumb.innerText = item.title;
         breadcrumb.onclick = () => {
           const newPath = path.slice(0, index + 1);
@@ -910,21 +917,23 @@
 
     // Fetch and render data
     loadAllJsonFiles().then(data => {
-        // Use the first layer of the data directly
-        const firstLayer = data;
-        // Render navigation using the first layer of data
-        renderNavigation(firstLayer, document.getElementById('navigation'), true);
-        // Render bookmarks using the first layer of data, starting from the Bookmark
-        renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
+      const firstLayer = data;
+      // 传递空数组作为初始父路径
+      renderNavigation(firstLayer, document.getElementById('navigation'), true, []);
+      renderBookmarks(firstLayer, [{ title: 'Bookmark', children: firstLayer }]);
 
-        // Automatically select and show the first item
-        if (firstLayer.length > 0) {
-          const firstItem = firstLayer[0];
-          updateSidebarActiveState([{ title: firstItem.title, children: firstItem.children }]);
-          renderBookmarks(firstItem.children, [{ title: 'Bookmark', children: firstLayer }, { title: firstItem.title, children: firstItem.children }]);
-        }
-      })
-      .catch(error => console.error('Error loading bookmarks:', error));
+      // 自动选择第一个项目
+      if (firstLayer.length > 0) {
+        const firstItem = firstLayer[0];
+        const initialPath = [
+          { title: 'Bookmark', children: firstLayer },
+          { title: firstItem.title, children: firstItem.children }
+        ];
+        updateSidebarActiveState(initialPath);
+        renderBookmarks(firstItem.children, initialPath);
+      }
+    })
+    .catch(error => console.error('Error loading bookmarks:', error));
 
     function debounce(func, wait) {
       let timeout;
