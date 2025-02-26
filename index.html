@@ -289,6 +289,7 @@
 
   <script>
       const jsonFiles = [
+        "json/frontend.json",
         "json/feyoudao.json",
         "json/v2fds.json",
         "json/cheatSheet.json",
@@ -465,7 +466,7 @@
     // Create bookmark card element
     function createCard(title, url, icon, index) {
       const card = document.createElement('div');
-      card.className = 'cursor-pointer flex items-center hover:shadow-sm transition-shadow p-4 bg-white shadow-sm ring-1 ring-gray-900/5 dark:feyoudao-ring-gray-800 rounded-lg hover:bg-gray-100 dark:feyoudao-bg-gray-900 dark:hover:feyoudao-bg-gray-800 card-shadow touch-feedback card-animate';
+      card.className = 'cursor-pointer flex items-center hover:shadow-sm transition-shadow p-4 bg-white shadow-sm ring-1 ring-gray-900/5 dark:feyoudao-ring-gray-800 rounded-lg hover:bg-gray-100 dark:feyoudao-bg-gray-700 dark:hover:feyoudao-bg-gray-600 card-shadow touch-feedback card-animate';
       card.style.animationDelay = `${index * 0.05}s`; // 错开动画时间
       card.onclick = () => window.open(url, '_blank');
 
@@ -601,12 +602,6 @@
             subList.className = 'ml-4 space-y-2 hidden';
             renderNavigation(folder.children, subList, false, path.concat({ title: folder.title, children: folder.children }));
             container.appendChild(subList);
-
-            if (isFirstRender && index === 0) {
-              // Expand the first item on initial render
-              subList.classList.remove('hidden');
-              toggleIcon.classList.add('rotate-90');
-            }
 
             navItem.onclick = (e) => {
               e.stopPropagation();
